@@ -1,3 +1,12 @@
 body, html {
   background-color: #F4F4ED;
 }
+
+mat-card-title {
+  text-align: center;
+  padding: 5pt;
+  margin: 2pt;
+  border-radius: 5pt;
+  color: #fff;
+  background-color: #6d0000;
+}

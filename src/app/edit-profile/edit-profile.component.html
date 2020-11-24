@@ -1,0 +1,49 @@
+<div class="main-div">
+
+  <mat-card style="width: 50%">
+    <mat-card-title>Change Password</mat-card-title>
+    <mat-form-field appearance="fill">
+      <mat-label>Current Password</mat-label>
+      <input [(ngModel)]="password" type="password" matNativeControl>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>New Password</mat-label>
+      <input [(ngModel)]="newpassword" type="password" matNativeControl>
+    </mat-form-field>
+
+
+    <button (click)="changePW()" style="width: 100%" mat-button>Change Password</button>
+  </mat-card>
+
+  <mat-card *ngIf="show" style="width: 50%">
+    <mat-card-title>Your State Subscriptions</mat-card-title>
+
+    <mat-form-field>
+      <mat-label>State Subscription 1</mat-label>
+      <mat-select [(ngModel)]="state1" selected="California" name="state1">
+        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>State Subscription 2</mat-label>
+      <mat-select [(ngModel)]="state2" name="state1">
+        <mat-option [value]="">N/A</mat-option>
+        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>State Subscription 3</mat-label>
+      <mat-select [(ngModel)]="state3" name="state1">
+        <mat-option [value]="">N/A</mat-option>
+        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <button (click)="updateSubscriptions()" style="width: 100%" mat-button>Update Subscriptions</button>
+  </mat-card>
+
+
+
+
+</div>

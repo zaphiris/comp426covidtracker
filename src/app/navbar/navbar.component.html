@@ -1,3 +1,6 @@
 <mat-toolbar>
   <span>Comp 426 Political Covid Tracker</span>
+  <span style="flex: 1 1 auto;" class="example-spacer"></span>
+  <span *ngIf="!loggedIn || showLoggedOut"> <a href = '/login'><button mat-button>Login</button></a> <a href="/register"><button mat-button>Register</button></a></span>
+  <span *ngIf="loggedIn && show"><a href = '/newsfeed'><button mat-button>Your News Feed</button></a><button mat-button>Edit Profile</button>  <button (click)="logOut()" mat-button>Logout</button></span>
 </mat-toolbar>

@@ -1,0 +1,24 @@
+<div class="main-div">
+
+  <mat-card style="width: 50%">
+    <mat-card-title>Register</mat-card-title>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input  [(ngModel)]="email" matNativeControl>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input [(ngModel)]="password" type="password" matNativeControl>
+    </mat-form-field>
+
+
+
+    <button (click)="register()" style="width: 100%" mat-button>Login</button>
+  </mat-card>
+
+
+
+
+</div>

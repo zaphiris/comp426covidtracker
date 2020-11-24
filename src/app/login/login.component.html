@@ -1,0 +1,25 @@
+<div class="main-div column" fxLayout="column">
+<mat-card style="width: 50%">
+  <mat-card-title>Login</mat-card-title>
+  <br>
+<mat-form-field appearance="fill">
+  <mat-label>Username</mat-label>
+  <input [(ngModel)]="email" matNativeControl>
+</mat-form-field>
+<br>
+<mat-form-field appearance="fill">
+<mat-label>Password</mat-label>
+<input [(ngModel)]="password" type="password" matNativeControl>
+</mat-form-field>
+
+
+
+  <button (click)="login()" style="width: 100%" mat-button>Login</button>
+</mat-card>
+<br><br>
+<mat-card *ngIf="showForm">
+  Invalid login credentials. Please try again
+</mat-card>
+
+
+</div>

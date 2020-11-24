@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {UserService} from '../user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  loggedIn: boolean;
+  userServiceG: UserService;
+  routerG: Router;
+  show: boolean = false;
+  showLoggedOut: boolean = false;
+
+  constructor(userService: UserService, router: Router) {
+    this.loggedIn = userService.checkIfLoggedIn();
+    this.routerG = router;
+    if(!this.loggedIn) {
+      this.showLoggedOut = true;
+    } else {
+      this.show = true;
+    }
+  }
+
+  async logOut() {
+    this.show = false;
+    this.showLoggedOut = true;
+    await localStorage.removeItem('session');
+    await this.routerG.navigate(['/']);
+  }
 
   ngOnInit(): void {
   }

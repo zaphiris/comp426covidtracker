@@ -1,0 +1,10 @@
+<mat-card>
+<mat-form-field appearance="fill">
+  <mat-label>Data year</mat-label>
+  <mat-select [(ngModel)]="year" name="year">
+    <mat-option *ngFor="let year of years" [value]="year._id">{{year._id}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<button (click)="clickButton()">Click Me</button>
+</mat-card>

@@ -4,9 +4,18 @@ mat-card {
 }
 
 map-image {
-    width: 100%;
 }
 
-#HI {
-    fill: #ff0000;
+mat-card-title {
+  text-align: center;
+  padding: 5pt;
+  margin: 2pt;
+  border-radius: 5pt;
+  color: #fff;
+  background-color: #6d0000;
+}
+
+svg {
+  width: 100% !important;
+  height: auto !important;
 }
