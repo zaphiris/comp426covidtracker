@@ -2,26 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
-## Development server
+## How to run locally
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This app uses Express.js to handle the backend, and Angular.js to handle the front end. Therefore, in order to run the code locally, you will need to start two services.
 
-## Code scaffolding
+## Starting Express.js 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In order to start Express.js, clone the repository and navigate to the "express" directory. Once in the directory, run "npm run start" 
 
-## Build
+## Starting Angular.js
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+After starting Express.js, navigate back to the root folder of the repository and once again run "npm run start" 
 
-## Running unit tests
+## Accessing the app
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+After starting both services, you will be able to access the app locally at http://localhost:4200.
