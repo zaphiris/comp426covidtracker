@@ -63,7 +63,7 @@ export class CovidService {
   header;
 
   private covidApiUrl = 'https://api.covidtracking.com/v1/states/current.json';
-  private electionDatabaseApi = 'http://localhost:8080/'
+  private electionDatabaseApi = 'https://comp426covidapi.uc.r.appspot.com/'
   private stateString: string = "(";
   private statesList = new Array();
   private states: JsonObject;
@@ -82,7 +82,7 @@ export class CovidService {
   }
 
   public sendElectionRequest(year: number) {
-    let data = this.httpClientGlob.get('http://localhost:8080/' + year, this.header);
+    let data = this.httpClientGlob.get('https://comp426covidapi.uc.r.appspot.com/' + year, this.header);
     return data;
   }
 
@@ -91,7 +91,7 @@ export class CovidService {
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${localStorage.getItem('session')}`)
     }
-    let data = this.httpClientGlob.get('http://localhost:8080/', header);
+    let data = this.httpClientGlob.get('https://comp426covidapi.uc.r.appspot.com/', header);
     return data;
 
   }

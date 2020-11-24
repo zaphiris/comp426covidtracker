@@ -15,10 +15,12 @@
 
 
 
-    <button (click)="register()" style="width: 100%" mat-button>Login</button>
+    <button (click)="register()" style="width: 100%" mat-button>Register</button>
   </mat-card>
 
-
+  <mat-card *ngIf="show">
+    Username taken or field blank. Choose another.
+  </mat-card>
 
 
 </div>

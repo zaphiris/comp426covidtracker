@@ -1,10 +1,12 @@
 <mat-card>
-<mat-form-field appearance="fill">
-  <mat-label>Data year</mat-label>
-  <mat-select [(ngModel)]="year" name="year">
+  <mat-card-title>Select Election Data Year</mat-card-title>
+<mat-form-field style="width: 100%; margin-top: 20px; ">
+  <mat-label>Data Year</mat-label>
+  <mat-select [(ngModel)]="year" name="year" style="font-size: 30px;">
+    <option value="2016" selected="selected">Choose</option>
     <mat-option *ngFor="let year of years" [value]="year._id">{{year._id}}</mat-option>
   </mat-select>
 </mat-form-field>
 
-<button (click)="clickButton()">Click Me</button>
+<button mat-button (click)="clickButton()">Click Me</button>
 </mat-card>

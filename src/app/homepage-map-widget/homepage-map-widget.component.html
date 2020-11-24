@@ -1,7 +1,7 @@
 <div fxLayout="row">
 <mat-card class="map" *ngIf="show && loadPage">
-  <mat-card-title class="title">Covid19 % Positive Cases vs 2016 Election Results</mat-card-title>
-  <svg xmlns="http://www.w3.org/2000/svg" width="959" height="700"
+  <mat-card-title class="title">Covid19 % Positive Test Results vs {{valueEmittedFromChildComponent}} Election Results</mat-card-title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="959" height="730px"
        viewBox="0 0 959 700">
     <title>Blank US states map</title>
     <defs>
@@ -17,26 +17,47 @@
         <text style="paint-order: stroke; stroke: #fff; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; font-weight: 800;" [attr.x]="electionObject.getStateTextX(state.state_po)" [attr.y]="electionObject.getStateCircleY(state.state_po)" fill="black">{{covidObject.getPercentage(state.state_po)}}%</text>
       </g>
 
+      <line x1="806" y1="249" x2="848" y2="249" style="stroke:rgb(255,0,0);stroke-width:2" />
+
+      <line x1="870" y1="212" x2="856" y2="174" style="stroke:rgb(255,0,0);stroke-width:2" />
+
+      <line x1="893" y1="191" x2="875" y2="170" style="stroke:rgb(255,0,0);stroke-width:2" />
+
+      <line x1="866" y1="157" x2="921" y2="141" style="stroke:rgb(255,0,0);stroke-width:2" />
+
+
+
     </g>
     <path id="frames" fill="none" stroke="#A9A9A9" stroke-width="2" d="M215 493v55l36 45M0 425h147l68 68h85l54 54v46"/>
+
 
     <defs>
       <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" style="stop-color:rgb(166,0,0);stop-opacity:1" />
         <stop offset="100%" style="stop-color:rgb(0,0,166);stop-opacity:1" />
       </linearGradient>
+
     </defs>
     <rect x="50px" y="650px" fill="url(#grad1)" width="500px" height="30px"></rect>
+    <text x="50px" y="700px" style="paint-order: stroke; stroke: #fff; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; font-weight: 800;">Majority Republican</text>
+    <text x="420px" y="700px" style="paint-order: stroke; stroke: #fff; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; font-weight: 800;">Majority Democratic</text>
     <circle cx="630px" cy="665px" r="5" fill="yellow"></circle>
+    <text x="627" y="700px" style="paint-order: stroke; stroke: #fff; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; font-weight: 800;">1%</text>
+
+
     <circle cx="650px" cy="665px" r="10" fill="yellow"></circle>
     <circle cx="680px" cy="665px" r="15" fill="yellow"></circle>
     <circle cx="720px" cy="665px" r="20" fill="yellow"></circle>
+
     <circle cx="770px" cy="665px" r="25" fill="yellow"></circle>
+
     <circle cx="830px" cy="665px" r="30" fill="yellow"></circle>
     <circle cx="900px" cy="665px" r="35" fill="yellow"></circle>
   </svg>
 </mat-card>
 
-  <app-homepage-data-card (buttonClicked)="parentEventHandlerFunction($event)" [years]="years" style="width: 25%"></app-homepage-data-card>
+
+  <app-homepage-data-card (buttonClicked)="parentEventHandlerFunction($event)" [years]="years" style="margin: auto;
+  width: 50%;"></app-homepage-data-card>
 
 </div>

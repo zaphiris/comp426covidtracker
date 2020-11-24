@@ -18,10 +18,16 @@ export class NavbarComponent implements OnInit {
   constructor(userService: UserService, router: Router) {
     this.loggedIn = userService.checkIfLoggedIn();
     this.routerG = router;
-    if(!this.loggedIn) {
+
+    if(!localStorage.getItem('session')) {
       this.showLoggedOut = true;
     } else {
       this.show = true;
+    }
+
+    if(router.url === '/') {
+      this.show = true;
+      this.showLoggedOut = false;
     }
   }
 
@@ -29,10 +35,14 @@ export class NavbarComponent implements OnInit {
     this.show = false;
     this.showLoggedOut = true;
     await localStorage.removeItem('session');
-    await this.routerG.navigate(['/']);
+    await this.routerG.navigate(['/login']);
   }
 
   ngOnInit(): void {
   }
 
+  hideShowHeader() {
+    this.show = false;
+    this.show = true;
+  }
 }

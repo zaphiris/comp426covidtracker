@@ -15,6 +15,11 @@ mat-card-title {
   background-color: #6d0000;
 }
 
+app-homepage-data-card {
+  margin: auto;
+  width: 50%;
+}
+
 svg {
   width: 100% !important;
   height: auto !important;

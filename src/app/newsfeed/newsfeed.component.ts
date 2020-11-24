@@ -4,6 +4,7 @@ import {plainToClass} from 'class-transformer';
 import {JsonObject} from '@angular/compiler-cli/ngcc/src/packages/entry_point';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {UserService} from '../user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-newsfeed',
@@ -16,7 +17,11 @@ export class NewsfeedComponent implements OnInit {
   show: boolean = false;
   covidServiceG: CovidService;
 
-  constructor(private userService: UserService, client: HttpClient) {
+  constructor(private userService: UserService, client: HttpClient, router: Router) {
+
+    if(!userService.checkIfLoggedIn()) {
+      router.navigate(['login']);
+    }
 
     this.userService.getStateSubscriptions().subscribe((data: JsonObject) => {
 

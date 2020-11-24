@@ -13,7 +13,7 @@ const bodyParser = require('body-parser');
 
 var app = express();
 app.use(bodyParser.json());
-app.use(cors({origin: 'http://localhost:4200'}));
+app.use(cors({origin: ['http://localhost:4200', 'https://sigma-bay-296606.uc.r.appspot.com']}));
 var indexRouter = require('./routes/index');
 var authRouter = require('./routes/authentication');
 
@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const port = 8080;
+const port = 3000;
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })

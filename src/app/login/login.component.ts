@@ -13,10 +13,12 @@ export class LoginComponent implements OnInit {
   @Input() password: string;
   userService: UserService;
   showForm: boolean = false;
-  router: Router;
+  public router: Router;
+
+
 
   constructor(userService: UserService, router: Router) {
-
+    this.router = router;
     if(userService.loggedIn) {
       router.navigate(['/']);
     } else {
@@ -25,9 +27,21 @@ export class LoginComponent implements OnInit {
     }
   }
 
+
+
+
   async login() {
-    await this.userService.login(this.email, this.password);
-    this.router.navigate(['/']);
+
+    let router = this.router;
+    let success = async function(token) {
+      await localStorage.setItem('session', token);
+      router.navigate(['/']);
+    };
+
+    await this.userService.login(this.email, this.password, success);
+    if(this.userService.checkIfLoggedIn()) {
+      this.router.navigate(['/']);
+    }
   }
 
   ngOnInit(): void {

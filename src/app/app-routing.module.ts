@@ -18,6 +18,7 @@ import {NewsfeedComponent} from './newsfeed/newsfeed.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'home', component: HomepageMapWidgetComponent },
   { path: 'editprofile', component: EditProfileComponent },
   { path: 'newsfeed', component: NewsfeedComponent },
   { path: '', component: HomepageMapWidgetComponent }

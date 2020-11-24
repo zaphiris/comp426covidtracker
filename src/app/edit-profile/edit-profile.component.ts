@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UserService} from '../user.service';
 import {JsonObject} from '@angular/compiler-cli/ngcc/src/packages/entry_point';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-edit-profile',
@@ -17,20 +18,30 @@ export class EditProfileComponent implements OnInit {
   @Input() state3: any;
   userServiceG: UserService;
 
-  initState1: any;
-  initState2: any;
-  initState3: any;
+  sinit1;
+  sinit2;
+  sinit3;
 
-  constructor(userService: UserService) {
+  showSuccess = false;
+  private router: Router;
+
+  constructor(userService: UserService, router: Router) {
 
     this.userServiceG = userService;
+    this.router = router;
+
+    if(!userService.checkIfLoggedIn()) {
+      router.navigate(['login']);
+    }
+
+
     userService.getStateSubscriptions().subscribe((data: JsonObject) => {
 
-      this.initState1 = data.state1;
-      this.initState2 = data.state2;
-      this.initState3 = data.state3;
-      this.show = true;
+      this.sinit1 = data.state1;
+      this.sinit2 = data.state2;
+      this.sinit3 = data.state3;
 
+      this.show = true;
 
     })
 
@@ -39,11 +50,9 @@ export class EditProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changePW() {
-
-  }
-
   updateSubscriptions() {
     this.userServiceG.updateStateSubscription(this.state1, this.state2, this.state3);
+    this.showSuccess = true;
+    this.router.navigate(['/editprofile']);
   }
 }

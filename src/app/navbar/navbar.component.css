@@ -2,3 +2,7 @@ mat-toolbar {
   background-color: #334E58;
   color: #F4F4ED;
 }
+
+a:active, a:hover, a {
+  color: #F4F4ED;
+}

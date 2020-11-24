@@ -1,0 +1,27 @@
+.main-div{
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card-title {
+  text-align: center;
+  padding: 5pt;
+  margin: 2pt;
+  border-radius: 5pt;
+  color: #fff;
+  justify-content: center;
+  background-color: #6d0000;
+}
+
+mat-form-field, mat-label, mat-button
+{
+  margin: 0% 2.5% 0% 2.5%;
+  width: 95%;
+}
+
+button {
+  background-color: #334E58;
+  color: #F4F4ED;
+}

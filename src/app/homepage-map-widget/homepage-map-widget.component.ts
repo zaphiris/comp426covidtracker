@@ -350,10 +350,13 @@ export class HomepageMapWidgetComponent implements OnInit {
   @ViewChild(HomepageDataCardComponent) child: HomepageDataCardComponent;
 
 
-  valueEmittedFromChildComponent: string = '';
+  valueEmittedFromChildComponent: string = '2016';
   parentEventHandlerFunction(valueEmitted){
 
     this.show = false;
+    this.valueEmittedFromChildComponent = valueEmitted;
+    valueEmitted = valueEmitted == null ? 2016: valueEmitted;
+
     this.valueEmittedFromChildComponent = valueEmitted;
 
     this.covidServiceGlob.sendElectionRequest(valueEmitted).subscribe((data) => {

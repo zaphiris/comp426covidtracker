@@ -1,5 +1,10 @@
 <div class = 'main-div' fxLayout="column">
 
+ <mat-card style="width: 50%; margin: 10pt;">
+   Warning: since we are using the free developer version of the news API, this feature only works when hosted on localhost.
+   If you would like to try this feature out for yourself, check out GitHub for instructions.
+ </mat-card>
+
 <mat-card style="width: 50%; margin: 10pt;" *ngFor="let news of newsData">
   <a [href]="news.url">
   <mat-card-title>

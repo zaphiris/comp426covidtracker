@@ -19,7 +19,7 @@ class User {
 
       const expiry = new Date();
       expiry.setDate(expiry.getDate() + 8);
-      db.collection('Users').insert({'email': email, 'password': this.password});
+      db.collection('Users').insert({'email': email, 'password': this.password, 'state1': 'North Carolina'});
       let token = jwt.sign(
         {
           email: email,

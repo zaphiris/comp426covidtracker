@@ -26,6 +26,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { NewsfeedComponent } from './newsfeed/newsfeed.component';
 import {UserService} from './user.service';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -38,25 +39,26 @@ import {UserService} from './user.service';
     EditProfileComponent,
     NewsfeedComponent
   ],
-  imports: [
-    BrowserModule,
-    MatToolbarModule,
-    MatCardModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatOptionModule,
-    MatSelectModule,
-    HttpClientModule,
-    LayoutModule,
-    MatSelectModule,
-    FormsModule,
-    AppRoutingModule,
-    RouterModule,
-    MatFormFieldModule,
-    FlexLayoutModule,
-    MatInputModule,
-    MatGridListModule
-  ],
+    imports: [
+        BrowserModule,
+        MatToolbarModule,
+        MatCardModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatOptionModule,
+        MatSelectModule,
+        HttpClientModule,
+        LayoutModule,
+        MatSelectModule,
+        FormsModule,
+        AppRoutingModule,
+        RouterModule,
+        MatFormFieldModule,
+        FlexLayoutModule,
+        MatInputModule,
+        MatGridListModule,
+        MatListModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

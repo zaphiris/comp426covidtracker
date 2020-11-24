@@ -10,3 +10,14 @@ mat-card-title {
   color: #fff;
   background-color: #6d0000;
 }
+
+mat-toolbar {
+  background-color: #334E58;
+  color: #F4F4ED;
+}
+
+mat-toolbar > a:active, a:hover, a{
+  color: #F4F4ED;
+}
+
+
